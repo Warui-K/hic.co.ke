@@ -70,7 +70,15 @@ function modules(){
     .pipe(gulp.dest('./src/vendor/popper.js'))
     .pipe(gulp.dest('./dist/vendor/popper.js'));
 
-    return merge(bootstrap, jquery, popper, bootstrapIcons);
+    
+    //Masonry
+    var masonry = gulp.src(
+        './node_modules/masonry-layout/dist/masonry.pkgd.min.js'
+    )
+    .pipe(gulp.dest('./src/vendor/masonry.pkgd.min.js'))
+    .pipe(gulp.dest('./dist/vendor/masonry.pkgd.min.js'));
+
+    return merge(bootstrap, jquery, popper, bootstrapIcons, masonry);
 
 }
 
